@@ -1,16 +1,17 @@
+pub mod helpers;
+
 fn main() {
     println!("Hello Rust , Olujimi Adebakin!");
+
     // test_func();
-    let myresult: String = get_full_name("jimi", "adebakin");
+    let myresult: String = helpers::name_helpers::get_full_name("jimi", "adebakin");
      println!("Hello from: {}", myresult);
+
+     let my_num: i8 = helpers::api_helpers::get_age_plus_5(30);
+     println!("my_num is: {}", my_num);
 }
 
 
-fn get_full_name(first: &str, last: &str) -> String {
-
-    let full_name: String = format!("{0} {1}", first, last);
-    return full_name;
-}
 
 
 #[allow(dead_code)]
