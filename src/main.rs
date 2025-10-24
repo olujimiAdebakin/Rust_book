@@ -1,11 +1,19 @@
-
-#[warn(unused_variables)]
 fn main() {
     println!("Hello Rust , Olujimi Adebakin!");
-    test_func();
+    // test_func();
+    let myresult: String = get_full_name("jimi", "adebakin");
+     println!("Hello from: {}", myresult);
 }
 
-#[warn(unused_assignments)]
+
+fn get_full_name(first: &str, last: &str) -> String {
+
+    let full_name: String = format!("{0} {1}", first, last);
+    return full_name;
+}
+
+
+#[allow(dead_code)]
 fn test_func(){
     let x: f64 = 240.8;
     let y: u8 = x as u8 - 50;
@@ -34,5 +42,16 @@ fn test_func(){
 
     let ages: [i32; 6] = [10, 20, 30, 40, 50, 60];
     println!("ages array is: {:?}", ages);
+
+
+    // slice
+     let ages: [i32; 6] = [10, 20, 30, 40, 50, 60];
+    println!("ages array is: {:?}", ages);
+
+    let ages_slices:&[i32] = &ages[1..4];
+     println!("ages_slice: {:?}", ages_slices);
+
+    let new_ages: [u16; 3] = [ages[1] as u16, ages[2] as u16, ages[3] as u16];
+    println!("new_ages: {:?}", new_ages);
     
 }
