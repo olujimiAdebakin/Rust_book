@@ -4,11 +4,28 @@ fn main() {
     println!("Hello Rust , Olujimi Adebakin!");
 
     // test_func();
-    let myresult: String = helpers::name_helpers::get_full_name("jimi", "adebakin");
-     println!("Hello from: {}", myresult);
+//     let myresult: String = helpers::name_helpers::get_full_name("jimi", "adebakin");
+//      println!("Hello from: {}", myresult);
 
-     let my_num: i8 = helpers::api_helpers::get_age_plus_5(30);
-     println!("my_num is: {}", my_num);
+//      let my_num: i8 = helpers::api_helpers::get_age_plus_5(30);
+//      println!("my_num is: {}", my_num);
+     test_if();
+ }
+
+
+// control flow
+
+fn test_if(){
+    let age_to_drive = 16u8;
+
+    println!("Enter the person's age:");
+    let my_input: &mut String = &mut String::from("");
+    std::io::stdin().read_line( my_input).unwrap();
+
+    let age = my_input.trim().parse::<u8>().unwrap();
+    if age >= age_to_drive {
+        println!("Issuing drivers license, because they are old enough");
+    }
 }
 
 
