@@ -13,7 +13,7 @@ pub fn wingman_app() {
     };
 
     // Define a closure that checks if he's ready
-    let mut is_ready:  = |name: &str| -> bool {
+    let mut is_ready  = |name: &str| -> bool {
         println!("Checking if {} has enough confidence...", name);
         confidence += 1; // captures & mutates outer variable
         confidence > 2
