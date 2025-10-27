@@ -1,4 +1,5 @@
 pub mod helpers;
+pub mod closures;
 
 fn main() {
     println!("Hello Rust , Olujimi Adebakin!");
@@ -9,12 +10,17 @@ fn main() {
 
 //      let my_num: i8 = helpers::api_helpers::get_age_plus_5(30);
 //      println!("my_num is: {}", my_num);
-     test_if();
+    //  test_if();
+    // test_while();
+    // test_loop()
+    // test_for();
+
+    test_closures();
  }
 
 
 // control flow
-
+#[allow(dead_code)]
 fn test_if(){
     let age_to_drive = 16u8;
 
@@ -24,12 +30,65 @@ fn test_if(){
 
     let age = my_input.trim().parse::<u8>().unwrap();
     if age >= age_to_drive {
-        println!("Issuing drivers license, because they are old enough");
+        println!("Issuing drivers license, because you are old enough");
+    }
+    else if age == 16 || age > 14 {
+        println!("you are just on the verge of being old enough! Wait one more year.");
+    }
+    else {
+        println!("Wait a bit longer, you aint old enough for a drivers license");
+    }
+
+    let drivers_license: bool = if age >= 16 {true} else {false};
+
+
+
+}
+#[allow(dead_code)]
+fn test_while(){
+
+    let age_to_drive = 16u8;
+
+    let mut current_age = 0u8;
+
+    while current_age < age_to_drive{
+        println!("wating.......");
+
+        current_age += 1;
+    }
+}
+
+#[allow(dead_code)]
+fn test_loop(){
+    let mut x: i32 = 2;
+    loop {
+        println!("Hello from Rust ");
+
+        if x > 6 {
+            break;
+        }
+
+        x += 1;
     }
 }
 
 
+#[allow(dead_code)]
+fn test_for(){
+    let ages: [i32; 5] = [14, 18, 26, 35 ,41];
+    let age_to_drive: i32 = 16i32;
 
+       for value in ages {
+
+        if value >= age_to_drive {
+            println!("!You are not old enough to drive");
+        }
+        else {
+            println!("You need to wait a little bit more ....")
+        }
+    }
+
+}
 
 #[allow(dead_code)]
 fn test_func(){
