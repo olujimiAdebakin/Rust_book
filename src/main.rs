@@ -1,10 +1,14 @@
 pub mod helpers;
 pub mod closures;
+pub mod match_test;
 
 use crate::closures::{test_closure, wingman_app};
 
 
 fn main() {
+
+
+    match_test::test_match_int();
     println!("Hello Rust , Olujimi Adebakin!");
 
     // test_func();
