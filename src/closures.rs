@@ -1,6 +1,6 @@
 pub fn test_closure(){
-      let add: impl Fn() = || println!("Returning some text");
-      add();
+      let add  = |x: i8, y: u32| println!("Returning some numbers {} {}", x, y);
+      add(7, 100);
 }
 
 pub fn wingman_app() {

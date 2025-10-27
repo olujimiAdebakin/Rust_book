@@ -1,6 +1,9 @@
 pub mod helpers;
 pub mod closures;
 
+use crate::closures::{test_closure, wingman_app};
+
+
 fn main() {
     println!("Hello Rust , Olujimi Adebakin!");
 
@@ -15,7 +18,8 @@ fn main() {
     // test_loop()
     // test_for();
 
-    test_closures();
+    test_closure();
+    wingman_app();
  }
 
 
@@ -40,10 +44,10 @@ fn test_if(){
     }
 
     let drivers_license: bool = if age >= 16 {true} else {false};
-
-
-
 }
+
+
+
 #[allow(dead_code)]
 fn test_while(){
 
